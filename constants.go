@@ -8,9 +8,10 @@ const (
 )
 
 const (
-	ACCOUNTS_ENDPOINT_PROD = "/accounts"
+	ACCOUNTS_ENDPOINT = "/accounts"
+	BALANCE_ENDPOINT  = "/balance"
 )
 
 var (
-	ACCOUNTS_URL_PROD = fmt.Sprintf("%s%s", BASE_URL_PROD, ACCOUNTS_ENDPOINT_PROD)
+	ACCOUNTS_URL_PROD = fmt.Sprintf("%s%s", BASE_URL_PROD, ACCOUNTS_ENDPOINT)
 )
