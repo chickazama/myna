@@ -7,6 +7,20 @@ import (
 	"net/http"
 )
 
+type AccountIdentifier struct {
+	IdentifierType    string `json:"identifierType"`
+	BankIdentifier    string `json:"bankIdentifier"`
+	AccountIdentifier string `json:"accountIdentifier"`
+}
+
+type AccountIdentifiers struct {
+	AccountIdentifier  string              `json:"accountIdentifier"`
+	BankIdentifier     string              `json:"bankIdentifier"`
+	IBAN               string              `json:"iban"`
+	BIC                string              `json:"bic"`
+	AccountIdentifiers []AccountIdentifier `json:"accountIdentifiers"`
+}
+
 func (c *Client) GetAccountIdentifiers(a *AccountV2) (AccountIdentifiers, error) {
 	var ret AccountIdentifiers
 	url := fmt.Sprintf("%s/%s%s", ACCOUNTS_URL_PROD, a.AccountUID, IDENTIFIERS_ENDPOINT)

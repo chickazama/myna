@@ -7,6 +7,16 @@ import (
 	"net/http"
 )
 
+type BalanceV2 struct {
+	ClearedBalance        SignedCurrencyAndAmount `json:"clearedBalance"`
+	EffecticeBalance      SignedCurrencyAndAmount `json:"effectiveBalance"`
+	PendingTransactions   SignedCurrencyAndAmount `json:"pendingTransactions"`
+	AcceptedOverdraft     SignedCurrencyAndAmount `json:"acceptedOverdraft"`
+	Amount                SignedCurrencyAndAmount `json:"amount"`
+	TotalClearedBalance   SignedCurrencyAndAmount `json:"totalClearedBalance"`
+	TotalEffectiveBalance SignedCurrencyAndAmount `json:"totalEffectiveBalance"`
+}
+
 func (c *Client) GetAccountBalance(a *AccountV2) (BalanceV2, error) {
 	var ret BalanceV2
 	url := fmt.Sprintf("%s/%s%s", ACCOUNTS_URL_PROD, a.AccountUID, BALANCE_ENDPOINT)
