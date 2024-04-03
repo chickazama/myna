@@ -8,8 +8,9 @@ const (
 )
 
 const (
-	ACCOUNTS_ENDPOINT = "/accounts"
-	BALANCE_ENDPOINT  = "/balance"
+	ACCOUNTS_ENDPOINT    = "/accounts"
+	BALANCE_ENDPOINT     = "/balance"
+	IDENTIFIERS_ENDPOINT = "/identifiers"
 )
 
 var (
