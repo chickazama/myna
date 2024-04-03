@@ -10,6 +10,7 @@ const (
 const (
 	ACCOUNT_HOLDER_ENDPOINT        = "/account-holder"
 	ACCOUNTS_ENDPOINT              = "/accounts"
+	ADDRESSES_ENDPOINT             = "/addresses"
 	BALANCE_ENDPOINT               = "/balance"
 	CONFIRMATION_OF_FUNDS_ENDPOINT = "/confirmation-of-funds"
 	IDENTIFIERS_ENDPOINT           = "/identifiers"
