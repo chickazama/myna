@@ -2,4 +2,5 @@
 
 A Starling API client, written in Go.
 
-Description coming soon...
+Not ready for production, releases are for test purposes. Description coming soon...
+
