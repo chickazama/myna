@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/chickazama/myna/models"
 )
 
-func (c *Client) GetAccountBalance(a *models.AccountV2) (models.BalanceV2, error) {
-	var ret models.BalanceV2
+func (c *Client) GetAccountBalance(a *AccountV2) (BalanceV2, error) {
+	var ret BalanceV2
 	url := fmt.Sprintf("%s/%s%s", ACCOUNTS_URL_PROD, a.AccountUID, BALANCE_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {

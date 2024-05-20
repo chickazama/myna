@@ -1,4 +1,4 @@
-package models
+package myna
 
 type AssociatedFeedRoundUp struct {
 	GoalCategoryUid string            `json:"goalCategoryUid"`

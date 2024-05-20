@@ -1,4 +1,4 @@
-package models
+package myna
 
 type CurrencyFlag struct {
 	Enabled  bool   `json:"enabled"`

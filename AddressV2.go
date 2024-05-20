@@ -1,4 +1,4 @@
-package models
+package myna
 
 type AddressV2 struct {
 	Line1       string `json:"line1"`

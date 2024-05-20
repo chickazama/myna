@@ -1,4 +1,4 @@
-package models
+package myna
 
 type FeedItem struct {
 	FeedItemUID                        string                `json:"feedItemUid"`

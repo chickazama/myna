@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/chickazama/myna/models"
 )
 
-func (c *Client) GetAccountIdentifiers(a *models.AccountV2) (models.AccountIdentifiers, error) {
-	var ret models.AccountIdentifiers
+func (c *Client) GetAccountIdentifiers(a *AccountV2) (AccountIdentifiers, error) {
+	var ret AccountIdentifiers
 	url := fmt.Sprintf("%s/%s%s", ACCOUNTS_URL_PROD, a.AccountUID, IDENTIFIERS_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {

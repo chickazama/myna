@@ -1,4 +1,4 @@
-package models
+package myna
 
 type AccountV2 struct {
 	AccountUID      string `json:"accountUid"`

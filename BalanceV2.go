@@ -1,4 +1,4 @@
-package models
+package myna
 
 type BalanceV2 struct {
 	ClearedBalance        SignedCurrencyAndAmount `json:"clearedBalance"`

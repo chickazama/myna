@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/chickazama/myna/models"
 )
 
-func (c *Client) GetCards() ([]models.Card, error) {
-	var ret []models.Card
+func (c *Client) GetCards() ([]Card, error) {
+	var ret []Card
 	url := fmt.Sprintf("%s%s", BASE_URL_PROD, "/cards")
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
@@ -28,7 +26,7 @@ func (c *Client) GetCards() ([]models.Card, error) {
 		return ret, err
 	}
 	// fmt.Printf("%s\n", buf)
-	var wrapper models.WrapperCard
+	var wrapper WrapperCard
 	err = json.Unmarshal(buf, &wrapper)
 	if err != nil {
 		return ret, err

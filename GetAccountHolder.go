@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/chickazama/myna/models"
 )
 
-func (c *Client) GetAccountHolder() (models.AccountHolder, error) {
-	var ret models.AccountHolder
+func (c *Client) GetAccountHolder() (AccountHolder, error) {
+	var ret AccountHolder
 	url := fmt.Sprintf("%s%s", BASE_URL_PROD, ACCOUNT_HOLDER_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {

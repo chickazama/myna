@@ -1,4 +1,4 @@
-package models
+package myna
 
 type AddressesV2 struct {
 	Current  AddressV2   `json:"current"`

@@ -1,4 +1,4 @@
-package models
+package myna
 
 type AccountHolder struct {
 	AccountHolderUid  string `json:"accountHolderUid"`

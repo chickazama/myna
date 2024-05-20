@@ -1,4 +1,4 @@
-package models
+package myna
 
 type AccountIdentifiers struct {
 	AccountIdentifier  string              `json:"accountIdentifier"`

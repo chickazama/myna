@@ -1,4 +1,4 @@
-package models
+package myna
 
 type Card struct {
 	CardUid                   string         `json:"cardUid"`

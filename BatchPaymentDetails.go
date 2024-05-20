@@ -1,4 +1,4 @@
-package models
+package myna
 
 type BatchPaymentDetails struct {
 	BatchPaymentUID  string `json:"batchPaymentUid"`

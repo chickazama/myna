@@ -1,4 +1,4 @@
-package models
+package myna
 
 type CurrencyAndAmount struct {
 	Currency   string `json:"currency"`

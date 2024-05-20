@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/chickazama/myna/models"
 )
 
-func (c *Client) GetAddresses() (models.AddressesV2, error) {
-	var ret models.AddressesV2
+func (c *Client) GetAddresses() (AddressesV2, error) {
+	var ret AddressesV2
 	url := fmt.Sprintf("%s%s", BASE_URL_PROD, ADDRESSES_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
