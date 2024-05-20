@@ -1,4 +1,4 @@
-package models
+package myna
 
 type ConfirmationOfFundsResponse struct {
 	RequestedAmountAvailableToSpend                 bool `json:"requestedAmountAvailableToSpend"`
