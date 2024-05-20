@@ -5,24 +5,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/chickazama/myna/models"
 )
 
-type AddressV2 struct {
-	Line1       string `json:"line1"`
-	Line2       string `json:"line2"`
-	Line3       string `json:"line3"`
-	PostTown    string `json:"postTown"`
-	PostCode    string `json:"postCode"`
-	CountryCode string `json:"countryCode"`
-}
-
-type AddressesV2 struct {
-	Current  AddressV2   `json:"current"`
-	Previous []AddressV2 `json:"previous"`
-}
-
-func (c *Client) GetAddresses() (AddressesV2, error) {
-	var ret AddressesV2
+func (c *Client) GetAddresses() (models.AddressesV2, error) {
+	var ret models.AddressesV2
 	url := fmt.Sprintf("%s%s", BASE_URL_PROD, ADDRESSES_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {

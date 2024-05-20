@@ -5,14 +5,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/chickazama/myna/models"
 )
 
-type AccountHolderName struct {
-	AccountHolderName string `json:"accountHolderName"`
-}
-
-func (c *Client) GetAccountHolderName() (AccountHolderName, error) {
-	var ret AccountHolderName
+func (c *Client) GetAccountHolderName() (models.AccountHolderName, error) {
+	var ret models.AccountHolderName
 	url := fmt.Sprintf("%s%s/name", BASE_URL_PROD, ACCOUNT_HOLDER_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {

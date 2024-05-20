@@ -5,15 +5,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/chickazama/myna/models"
 )
 
-type ConfirmationOfFundsResponse struct {
-	RequestedAmountAvailableToSpend                 bool `json:"requestedAmountAvailableToSpend"`
-	AccountWouldBeInOverdraftIfRequestedAmountSpent bool `json:"accountWouldBeInOverdraftIfRequestedAmountSpent"`
-}
-
-func (c *Client) GetConfirmationOfFunds(a *AccountV2, amountMinorUnits int64) (ConfirmationOfFundsResponse, error) {
-	var ret ConfirmationOfFundsResponse
+func (c *Client) GetConfirmationOfFunds(a *models.AccountV2, amountMinorUnits int64) (models.ConfirmationOfFundsResponse, error) {
+	var ret models.ConfirmationOfFundsResponse
 	url := fmt.Sprintf("%s/%s%s?accountUid=%s&targetAmountInMinorUnits=%d", ACCOUNTS_URL_PROD, a.AccountUID, CONFIRMATION_OF_FUNDS_ENDPOINT, a.AccountUID, amountMinorUnits)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {

@@ -5,15 +5,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/chickazama/myna/models"
 )
 
-type AccountHolder struct {
-	AccountHolderUid  string `json:"accountHolderUid"`
-	AccountHolderType string `json:"accountHolderType"`
-}
-
-func (c *Client) GetAccountHolder() (AccountHolder, error) {
-	var ret AccountHolder
+func (c *Client) GetAccountHolder() (models.AccountHolder, error) {
+	var ret models.AccountHolder
 	url := fmt.Sprintf("%s%s", BASE_URL_PROD, ACCOUNT_HOLDER_ENDPOINT)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
